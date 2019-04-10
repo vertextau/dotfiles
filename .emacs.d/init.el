@@ -1,7 +1,27 @@
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+(setq user-package-list '(
+                          go-mode
+                          magit
+                          ws-butler
+                          ))
+
+;;(require 'package)
+(setq package-archives
+      '(("gnu" . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")))
+
 (package-initialize)
+
+;; fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; install the missing packages
+(dolist (package user-package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+(require 'ido)
+(ido-mode t)
 
 ;;;; org-mode
 (global-set-key "\C-cl" 'org-store-link)
@@ -9,46 +29,51 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-;;;; custom keybindings
+;; custom keybindings
 (global-set-key (kbd "<f5>") 'ibuffer)
+(global-set-key (kbd "<f6>") 'whitespace-mode)
 
-;;;; emacs font
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
-(set-face-attribute 'default t :font "DejaVu Sans Mono-12")
+;; Default font
+(set-default-font "Ubuntu Mono 12")
 
-;;;; other settings
+;; other settings
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
 (setq-default cursor-type 'bar)
+(setq-default tab-width 4)
+(defalias 'yes-or-no-p 'y-or-n-p)
 (global-display-line-numbers-mode 1)
 (show-paren-mode 1)
 (electric-pair-mode 1)
 (global-whitespace-mode 1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
+(delete-selection-mode 1)
+
 
 (setq c-default-style "stroustrup")
 
 (setq-default indent-tabs-mode nil)
 
-;;;; slime
+;; slime
 ;;(setq inferior-lisp-program "/usr/bin/sbcl")
+;;(setq slime-contribs '(slime-fancy))
 
-
-;;;; zero-width chars
+;; zero-width chars
 (update-glyphless-char-display
   'glyphless-char-display-control
   '((format-control . empty-box) (no-font . hex-code)))
 
-;;;; one line at a time
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+;; one line at a time
+(setq mouse-wheel-scroll-amount '(3 ((shift) . 3)))
 
-;;;; don't accelerate scrolling
+;; don't accelerate scrolling
 (setq mouse-wheel-progressive-speed nil)
 
-;;;; scroll window under mouse
+;; scroll window under mouse
 (setq mouse-wheel-follow-mouse 't)
 
 (custom-set-variables
@@ -64,7 +89,7 @@
  '(custom-safe-themes
    (quote
     ("359d1f63e27651772d5da107ed5dbd8efbf63e01966d5d927b253ab6eb64292b" "f6488c7a896356e5c9a8705090aacd0f5dc83fd05489c30bbad32315172c3821" "e5adab5efa251152918287a3115de34d7f1af9749620ecaeebbf08e0183f1ca2" "e4497ab32364d452a04da3702342860a57c4938a1ee20d0ee9025656aac7de41" "4dfbfa46029121f31a540fc394cd914e4ebaa7f3ffc2513101fead62a44e333f" default)))
- '(package-selected-packages (quote (ws-butler magit go-mode))))
+ '(package-selected-packages (quote (auctex racket-mode ws-butler magit go-mode))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -73,6 +98,9 @@
  ;; If there is more than one, they won't work right.
  '(whitespace-empty ((t (:background "gray91" :foreground "firebrick"))))
  '(whitespace-indentation ((t (:background "gray91" :foreground "gainsboro"))))
- '(whitespace-line ((t (:background "gainsboro"))))
- '(whitespace-space ((t (:foreground "gainsboro" :height 0.75))))
+ '(whitespace-line ((t nil)))
+ '(whitespace-line-column ((t nil)))
+ '(whitespace-space ((t (:foreground "gainsboro"))))
  '(whitespace-tab ((t (:foreground "gainsboro")))))
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
