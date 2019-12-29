@@ -1,5 +1,5 @@
 (setq user-package-list '(
-                          go-mode
+                          auctex
                           magit
                           ws-butler
                           ))
@@ -22,6 +22,7 @@
 
 (require 'ido)
 (ido-mode t)
+(setq ido-auto-merge-work-directories-length -1)
 
 ;;;; org-mode
 (global-set-key "\C-cl" 'org-store-link)
@@ -32,6 +33,16 @@
 ;; custom keybindings
 (global-set-key (kbd "<f5>") 'ibuffer)
 (global-set-key (kbd "<f6>") 'whitespace-mode)
+
+
+(global-set-key (kbd "C-M-n") '(lambda ()
+                                 (interactive)
+                                 (scroll-up 1)))
+
+(global-set-key (kbd "C-M-p") '(lambda ()
+                                 (interactive)
+                                 (scroll-down 1)))
+
 
 (eval-after-load 'cc-mode
   '(define-key c-mode-base-map (kbd "C-c o") 'ff-find-other-file))
@@ -96,7 +107,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (cmake-mode flycheck helm-gtags xcscope auctex ws-butler magit go-mode)))
+    (cmake-mode flycheck helm-gtags xcscope auctex ws-butler magit)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
@@ -105,7 +116,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 113 :width normal))))
+ '(default ((t (:family "DeJaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 100 :width normal))))
+ '(font-lock-comment-face ((t (:foreground "dark gray"))))
  '(whitespace-empty ((t (:background "gray91" :foreground "firebrick"))))
  '(whitespace-indentation ((t (:background "gray91" :foreground "gainsboro"))))
  '(whitespace-line ((t nil)))
