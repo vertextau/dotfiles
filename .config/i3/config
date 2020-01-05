@@ -9,30 +9,26 @@ floating_modifier $mod
 for_window [class="[.]*"] floating enable
 
 for_window [class="Chromium"] border none
-#for_window [class="Emacs"] border none
-for_window [class="Firefox"] border none
+for_window [class="Mozilla Firefox"] border none
 
 for_window [class="VirtualBox"] floating enable
-
 for_window [class="Tor Browser"] floating enable
 
 for_window [class="qBittorrent"] move container to workspace 10
-for_window [class="chromium"] move container to workspace 1
 
 #floating_minimum_size 1366x768
 
 ## autoexec
-exec --no-startup-id compton -CG --config ~/.config/compton/config &
+#exec --no-startup-id compton -CG --config ~/.config/compton/config &
 
 ## switch keyboard layout [eng, rus]
 #exec setxkbmap -layout us,ru -option grp:alt_space_toggle,grp_led:scroll
 exec setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:scroll
 
-
 ## exec commands
 bindsym $mod+Return exec urxvt
 
-bindsym $mod+Shift+a exec spectacle
+bindsym $mod+Shift+p exec scrot
 
 ## hotkey for a lockscreen
 bindsym $mod+p exec i3lock -e
@@ -43,7 +39,8 @@ bindsym $mod+d exec dmenu_run -fn "UbuntuMono-R:size=12"
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute        exec pactl set-sink-mute   0 toggle
-
+bindsym XF86MonBrightnessUp  exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
