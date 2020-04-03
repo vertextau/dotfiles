@@ -1,11 +1,8 @@
-## History stuff
 HISTFILE=/dev/null
 
 ## Variables
-export BROWSER="chromium"
-export EDITOR="emacsclient -t"
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export PATH=$HOME/.local/bin:$PATH
+export BROWSER="firefox"
+export EDITOR="emacsclient -n"
 
 ## Keybindings
 bindkey -e
@@ -32,12 +29,13 @@ bindkey "\e[7~" beginning-of-line
 
 ## Alias stuff
 alias lls="ls --color -lha --group-directories-first"
-alias ls="ls --color"
+alias ls="ls -a --color --group-directories-first"
 alias spm="sudo pacman"
 alias feh="feh -."
 alias sctl="systemctl"
 alias jctl="journalctl"
-alias e="emacs -nw"
+alias e="emacsclient -t"
+alias mc="mc -b"
 
 # Comp stuff
 zmodload zsh/complist
