@@ -91,10 +91,14 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (delete-selection-mode 1)
+(winner-mode 1)
 
 ;; auctex
 (setq font-latex-fontify-script nil)
 (setq font-latex-fontify-sectioning 1.0)
+
+;; hooks
+;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; slime
 ;;(setq inferior-lisp-program "/usr/bin/sbcl")
@@ -111,3 +115,5 @@
  '(whitespace-tab ((t (:foreground "gainsboro")))))
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+(custom-set-variables
+ '(package-selected-packages (quote (ws-butler magit auctex))))
