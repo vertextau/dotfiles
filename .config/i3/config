@@ -1,6 +1,5 @@
 set $mod Mod4
 focus_follows_mouse false
-#font pango:xos4 Terminus 9
 font pango:Ubuntu-R 8
 hide_edge_borders both
 floating_modifier $mod
@@ -9,10 +8,10 @@ floating_modifier $mod
 for_window [class="[.]*"] floating enable
 
 for_window [class="Chromium"] border none
-for_window [class="Mozilla Firefox"] border none
+for_window [class="Firefox"] border none
 
-for_window [class="VirtualBox"] floating enable
-for_window [class="Tor Browser"] floating enable
+#for_window [class="VirtualBox"] floating enable
+#for_window [class="Tor Browser"] floating enable
 
 for_window [class="qBittorrent"] move container to workspace 10
 
@@ -36,10 +35,10 @@ bindsym $mod+p exec i3lock -e
 bindsym $mod+d exec dmenu_run -fn "UbuntuMono-R:size=12"
 
 ## volume settings
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute        exec pactl set-sink-mute   0 toggle
-bindsym XF86MonBrightnessUp  exec xbacklight -inc 5
+bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume  exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute         exec pactl set-sink-mute   0 toggle
+bindsym XF86MonBrightnessUp   exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 bindsym $mod+h focus left
@@ -108,7 +107,7 @@ mode "resize" {
 
 bar {
         status_command i3status
-        position bottom
+        position top
         tray_output primary
         colors {
             background #242424
@@ -122,10 +121,10 @@ bar {
         }
 }
 
-#class			border	backgr. text	indicator
-client.focused		#585858 #585858 #d0d0d0 #000000
+#class                  border  bckgrnd text    indicator
+client.focused          #585858 #585858 #00ff00 #000000
 client.focused_inactive #585858 #585858 #a8a8a8 #d3d3d3
-client.unfocused	#585858 #585858 #a8a8a8 #d3d3d3
-client.urgent		#585858 #585858 #a8a8a8 #d3d3d3
-client.placeholder	#585858 #585858 #a8a8a8 #d3d3d3
-client.background	#141414
+client.unfocused        #585858 #585858 #a8a8a8 #d3d3d3
+client.urgent           #585858 #585858 #a8a8a8 #d3d3d3
+client.placeholder      #585858 #585858 #a8a8a8 #d3d3d3
+client.background       #141414
