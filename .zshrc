@@ -3,6 +3,7 @@ HISTFILE=/dev/null
 ## Variables
 export BROWSER="firefox"
 export EDITOR="emacsclient -n"
+export PATH="/usr/local/bin:$PATH"
 
 ## Keybindings
 bindkey -e
@@ -35,7 +36,7 @@ alias feh="feh -."
 alias sctl="systemctl"
 alias jctl="journalctl"
 alias e="emacsclient -t"
-alias mc="mc -b"
+alias ee="emacsclient -n"
 
 # Comp stuff
 zmodload zsh/complist
@@ -66,22 +67,12 @@ compdef _pacman pacman-color=pacman
 autoload -U colors zsh/terminfo
 colors
 
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git hg
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git*' formats "%{${fg[cyan]}%}[%{${fg[green]}%}%s%{${fg[cyan]}%}][%{${fg[blue]}%}%r/%S%%{${fg[cyan]}%}][%{${fg[blue]}%}%b%{${fg[yellow]}%}%m%u%c%{${fg[cyan]}%}]%{$reset_color%}"
-
 setprompt() {
   setopt prompt_subst
 
-  if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
-    p_host='%F{yellow}%M%f'
-  else
-    p_host='%F{green}%M%f'
-  fi
-
-export PROMPT='%F{blue}[%~]%f%F{green}$%f '
-export RPROMPT=''
+  export PROMPT='%F{blue}[%~]%f%F{green}$%f '
+  export RPROMPT=''
 }
+
 setprompt
 typeset -A key
