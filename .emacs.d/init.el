@@ -48,9 +48,6 @@
 (eval-after-load 'cc-mode
   '(define-key c-mode-base-map (kbd "C-c o") 'ff-find-other-file))
 
-(eval-after-load 'rust-mode
-  '(define-key rust-mode-map (kbd "C-c C-c") 'rust-run))
-
 ;; (add-hook 'before-save-hook #'gofmt-before-save)
 ;; (setq rust-format-on-save t)
 
@@ -105,10 +102,6 @@
 ;;(setq slime-contribs '(slime-fancy))
 
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#EDEDED" :foreground "#2E3436" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "JB" :family "JetBrains Mono NL"))))
  '(font-lock-comment-face ((t (:foreground "dark gray"))))
  '(whitespace-empty ((t (:background "gray91" :foreground "firebrick"))))
@@ -120,8 +113,4 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(package-selected-packages '(magit auctex)))
