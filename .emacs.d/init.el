@@ -4,8 +4,6 @@
                           ws-butler
                           ))
 
-;; (require 'package)
-
 (setq package-archives
       '(("gnu" . "https://elpa.gnu.org/packages/")
         ("melpa" . "https://melpa.org/packages/")))
@@ -44,13 +42,6 @@
                                  (interactive)
                                  (scroll-down 1)))
 
-
-(eval-after-load 'cc-mode
-  '(define-key c-mode-base-map (kbd "C-c o") 'ff-find-other-file))
-
-;; (add-hook 'before-save-hook #'gofmt-before-save)
-;; (setq rust-format-on-save t)
-
 ;; zero-width chars
 (update-glyphless-char-display
   'glyphless-char-display-control
@@ -74,7 +65,7 @@
 ;; scroll window under mouse
 (setq mouse-wheel-follow-mouse 't)
 
-(setq-default fill-column 120)
+(setq-default fill-column 75)
 (setq-default cursor-type 'bar)
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
@@ -90,11 +81,18 @@
 (delete-selection-mode 1)
 (winner-mode 1)
 
+;; c and cpp
+(eval-after-load 'cc-mode
+  '(define-key c-mode-base-map (kbd "C-c o") 'ff-find-other-file))
+
 ;; auctex
+(defun my-LaTeX-autoload ()
+  (auto-fill-mode)
+  (flyspell-mode))
 (setq font-latex-fontify-script nil)
 (setq font-latex-fontify-sectioning 1.0)
+(add-hook 'LaTeX-mode-hook 'my-LaTeX-autoload)
 
-;; hooks
 ;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; slime
