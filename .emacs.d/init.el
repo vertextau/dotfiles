@@ -1,7 +1,6 @@
 (setq user-package-list '(
                           auctex
                           magit
-                          ws-butler
                           ))
 
 (setq package-archives
