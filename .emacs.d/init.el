@@ -100,7 +100,7 @@
 ;;(setq slime-contribs '(slime-fancy))
 
 (custom-set-faces
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#EDEDED" :foreground "#2E3436" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "JB" :family "JetBrains Mono NL"))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#FFFFFF" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "JB" :family "JetBrains Mono NL"))))
  '(font-lock-comment-face ((t (:foreground "dark gray"))))
  '(whitespace-empty ((t (:background "gray91" :foreground "firebrick"))))
  '(whitespace-indentation ((t (:background "gray91" :foreground "gainsboro"))))
