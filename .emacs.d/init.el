@@ -80,9 +80,10 @@
 (defun my-LaTeX-autoload ()
   (auto-fill-mode)
   (flyspell-mode))
+
+(add-hook 'LaTeX-mode-hook 'my-LaTeX-autoload)
 (setq font-latex-fontify-script nil)
 (setq font-latex-fontify-sectioning 1.0)
-(add-hook 'LaTeX-mode-hook 'my-LaTeX-autoload)
 
 ;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
