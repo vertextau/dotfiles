@@ -56,7 +56,7 @@
 ;; scroll window under mouse
 (setq mouse-wheel-follow-mouse 't)
 
-(setq-default fill-column 75)
+(setq-default fill-column 80)
 (setq-default cursor-type 'bar)
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
