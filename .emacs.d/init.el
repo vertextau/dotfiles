@@ -33,15 +33,6 @@
 (global-set-key (kbd "<f5>") 'ibuffer)
 (global-set-key (kbd "<f6>") 'whitespace-mode)
 
-
-(global-set-key (kbd "C-M-n") '(lambda ()
-                                 (interactive)
-                                 (scroll-up 1)))
-
-(global-set-key (kbd "C-M-p") '(lambda ()
-                                 (interactive)
-                                 (scroll-down 1)))
-
 ;; zero-width chars
 (update-glyphless-char-display
   'glyphless-char-display-control
