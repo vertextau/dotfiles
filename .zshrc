@@ -2,7 +2,7 @@ HISTFILE=/dev/null
 
 ## Variables
 export BROWSER="firefox"
-export EDITOR="emacsclient -n"
+export EDITOR="vim"
 export PATH="/usr/local/bin:$PATH"
 
 ## Keybindings
@@ -35,9 +35,6 @@ alias spm="sudo pacman"
 alias feh="feh -."
 alias sctl="systemctl"
 alias jctl="journalctl"
-alias e="emacsclient -t"
-alias ee="emacsclient -n"
-
 
 zmodload zsh/complist
 autoload -Uz compinit
