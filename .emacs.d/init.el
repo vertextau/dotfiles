@@ -23,8 +23,8 @@
 (setq ido-auto-merge-work-directories-length -1)
 
 ;;;; swap ctrl and meta
-(setq x-ctrl-keysym 'meta)
-(setq x-meta-keysym 'ctrl)
+;; (setq x-ctrl-keysym 'meta)
+;; (setq x-meta-keysym 'ctrl)
 
 ;;;; org-mode
 (global-set-key "\C-cl" 'org-store-link)
@@ -91,11 +91,15 @@
 
 ;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; slime
+;;(setq inferior-lisp-program "/usr/bin/sbcl")
+;;(setq slime-contribs '(slime-fancy))
+
 (custom-set-faces
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#FFFFFF" :foreground "#2E3436" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "JB" :family "JetBrains Mono NL"))))
  '(font-lock-comment-face ((t (:foreground "dark gray"))))
  '(whitespace-empty ((t (:background "gray91" :foreground "firebrick"))))
- '(whitespace-indentation ((t (:background "gray91" :foreground "gainsboro"))))
+ '(whitespace-indentation ((t (:foreground "gainsboro"))))
  '(whitespace-line ((t nil)))
  '(whitespace-line-column ((t nil)))
  '(whitespace-space ((t (:foreground "gainsboro"))))
