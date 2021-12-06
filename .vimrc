@@ -2,15 +2,13 @@ syntax off
 colorscheme default
 filetype plugin indent on
 
-set autoindent
-"set expandtab
 set encoding=utf-8
-set laststatus=2
-set listchars=eol:$,tab:>-,space:.
-set nomodeline
-set title
-set noesckeys
+set fileformat=unix
 set hidden
+set laststatus=2
+set listchars=eol:$,tab:>-
+set noesckeys
+set nomodeline
 
 set number
 set numberwidth=5
@@ -19,12 +17,16 @@ set numberwidth=5
 set wildmenu
 set wildmode=longest,list
 
-set tabstop=4
-set softtabstop=4
+set expandtab
 set shiftwidth=4
+set smarttab
+set autoindent
 
 let mapleader = ','
 let maplocalleader = ','
+
+" Spelling
+set spelllang=en_us,ru
 
 " Extras
 map <Leader>c :%s/\s\+$//e<CR>
