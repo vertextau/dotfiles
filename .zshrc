@@ -35,9 +35,6 @@ alias spm="sudo pacman"
 alias feh="feh -."
 alias sctl="systemctl"
 alias jctl="journalctl"
-alias e="emacsclient -t"
-alias ee="emacsclient -n"
-
 
 zmodload zsh/complist
 autoload -Uz compinit
@@ -46,7 +43,6 @@ zstyle :compinstall filename '${HOME}/.zshrc'
 
 zstyle ':completion:*:pacman:*' force-list always
 zstyle ':completion:*:*:pacman:*' menu yes select
-
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 autoload -U colors zsh/terminfo
