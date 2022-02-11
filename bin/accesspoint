@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 function cleanup() {
     echo "Disabling wifi"
     nmcli radio wifi off
