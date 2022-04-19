@@ -26,8 +26,11 @@ let mapleader = ','
 let maplocalleader = ','
 
 " Spelling
-set spelllang=en_us,ru
+set spelllang=en_us
 
 " Extras
 map <Leader>c :%s/\s\+$//e<CR>
 map <Leader>t :silent !ctags -R<CR>
+
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
