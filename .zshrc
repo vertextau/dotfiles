@@ -19,12 +19,6 @@ bindkey '^[[D' backward-char
 bindkey '^[[B' down-line-or-search
 bindkey '^[[C' forward-char
 bindkey '^[[Z' reverse-menu-complete
-
-## for gnome-terminal
-#bindkey  "^[[H"   beginning-of-line
-#bindkey  "^[[F"   end-of-line
-
-## for urxvt
 bindkey "\e[8~" end-of-line
 bindkey "\e[7~" beginning-of-line
 
