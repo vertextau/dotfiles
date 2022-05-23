@@ -17,8 +17,6 @@ set numberwidth=5
 set wildmenu
 set wildmode=longest,list
 
-set expandtab
-set shiftwidth=4
 set smarttab
 set autoindent
 
