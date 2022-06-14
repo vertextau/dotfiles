@@ -29,6 +29,7 @@ alias spm="sudo pacman"
 alias feh="feh -."
 alias sctl="systemctl"
 alias jctl="journalctl"
+alias ee="emacsclient -n"
 
 zmodload zsh/complist
 autoload -Uz compinit
