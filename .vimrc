@@ -10,6 +10,8 @@ set listchars=eol:$,tab:>-
 set noesckeys
 set nomodeline
 
+set spellfile=~/.vim/spell/en.utf-8.add
+
 set number
 set numberwidth=5
 
@@ -19,6 +21,8 @@ set wildmode=longest,list
 
 set smarttab
 set autoindent
+set tabstop=4
+set shiftwidth=4
 
 let mapleader = ','
 let maplocalleader = ','
@@ -27,6 +31,8 @@ let maplocalleader = ','
 set spelllang=en_us
 
 " Extras
+autocmd FileType tex setlocal spellfile+=~/.vim/spell/latex.utf-8.add
+
 map <Leader>c :%s/\s\+$//e<CR>
 map <Leader>t :silent !ctags -R<CR>
 
