@@ -10,12 +10,12 @@ set listchars=eol:$,tab:>-
 set noesckeys
 set nomodeline
 
+set spelllang=en_us
 set spellfile=~/.vim/spell/en.utf-8.add
 
 set number
 set numberwidth=5
 
-" command-line completion
 set wildmenu
 set wildmode=longest,list
 
@@ -27,11 +27,8 @@ set shiftwidth=4
 let mapleader = ','
 let maplocalleader = ','
 
-" Spelling
-set spelllang=en_us
-
-" Extras
 autocmd FileType tex setlocal spellfile+=~/.vim/spell/latex.utf-8.add
+autocmd FileType markdown,tex,plaintex,mail,text setlocal tw=80
 
 map <Leader>c :%s/\s\+$//e<CR>
 map <Leader>t :silent !ctags -R<CR>
