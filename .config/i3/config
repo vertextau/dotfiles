@@ -1,6 +1,6 @@
 set $mod Mod4
 focus_follows_mouse false
-font pango:Ubuntu-R 8
+font pango:UbuntuMono-R 8
 hide_edge_borders both
 floating_modifier $mod
 
@@ -8,31 +8,16 @@ floating_modifier $mod
 for_window [class="[.]*"] floating enable
 
 for_window [class="Chromium"] border none
-for_window [class="Firefox"] border none
-
-#for_window [class="VirtualBox"] floating enable
-#for_window [class="Tor Browser"] floating enable
-
-for_window [class="qBittorrent"] move container to workspace 10
-
-#floating_minimum_size 1366x768
-
-## autoexec
-#exec --no-startup-id compton -CG --config ~/.config/compton/config &
+for_window [class="Mozilla Firefox"] border none
 
 ## switch keyboard layout [eng, rus]
-#exec setxkbmap -layout us,ru -option grp:alt_space_toggle,grp_led:scroll
 exec setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:scroll
 
 ## exec commands
-bindsym $mod+Return exec urxvt
-
+bindsym $mod+Return  exec urxvt
 bindsym $mod+Shift+p exec scrot
-
-## hotkey for a lockscreen
-bindsym $mod+p exec i3lock -e
-
-bindsym $mod+d exec dmenu_run -fn "UbuntuMono-R:size=12"
+bindsym $mod+p       exec i3lock -e
+bindsym $mod+i       exec dmenu_run -fn "UbuntuMono-R:size=12"
 
 ## volume settings
 bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume 0 +5%
@@ -51,27 +36,27 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-bindsym $mod+semicolon split h
-bindsym $mod+v split v
-bindsym $mod+f fullscreen toggle
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+semicolon   split h
+bindsym $mod+v           split v
+bindsym $mod+f           fullscreen toggle
+bindsym $mod+Shift+s     layout stacking
+bindsym $mod+Shift+w     layout tabbed
+bindsym $mod+Shift+e     layout toggle split
 bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-bindsym $mod+a focus parent
-#bindsym $mod+d focus child
+bindsym $mod+space       focus mode_toggle
+bindsym $mod+Shift+a     focus parent
 
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+q workspace 4
+bindsym $mod+w workspace 5
+bindsym $mod+e workspace 6
+bindsym $mod+a workspace 7
+bindsym $mod+s workspace 8
+bindsym $mod+d workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+c workspace back_and_forth
 
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -84,11 +69,11 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r       mode "resize"
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+o exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
         bindsym h resize shrink width 100 px or 100 ppt
