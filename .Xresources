@@ -1,7 +1,10 @@
-!URxvt*font: xft:DejaVu Sans Mono:size=8:antialias=true:autohint=true
+!URxvt*font: xft:Noto Sans Mono:size=10:antialias=true:autohint=true
 !URxvt*font: xft:xos4 Terminus:size=8:antialias=true:autohint=true
 URxvt*font: xft:UbuntuMono-R:size=10:antialias=true:autohint=true
-!URxvt*font: xft:JetBrains Mono NL:size=9:antialias=true:autohint=true
+URxvt.letterSpace: -1
+
+XTerm.vt100.faceName: UbuntuMono-R:size=10:antialias=true
+XTerm.termName: xterm-256color
 
 URxvt*scrollBar:	false
 URxvt.title:		term
@@ -9,7 +12,8 @@ URxvt.cursorBlink:	false
 URxvt.saveLines:	5000
 URxvt.urlLauncher:	firefox
 
-*background: #d0d0d0
+!*background: #EDEDED
+*background: #FFFFFF
 *foreground: #000000
 *cursorColor:  #1c2027
 
