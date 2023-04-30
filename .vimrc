@@ -27,11 +27,10 @@ set shiftwidth=4
 let mapleader = ','
 let maplocalleader = ','
 
-autocmd FileType tex setlocal spellfile+=~/.vim/spell/latex.utf-8.add
+autocmd FileType tex,plaintex setlocal spellfile+=~/.vim/spell/latex.utf-8.add
 autocmd FileType markdown,tex,plaintex,mail,text setlocal tw=80
 
 map <Leader>c :%s/\s\+$//e<CR>
 map <Leader>t :silent !ctags -R<CR>
 
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
+nnoremap <Leader>b :ls<CR>:b<Space>
